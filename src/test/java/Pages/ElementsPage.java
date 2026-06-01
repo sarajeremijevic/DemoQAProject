@@ -17,11 +17,25 @@ public class ElementsPage extends BaseTest {
     @FindBy(linkText = "Web Tables")
     public WebElement webTablesCard;
 
+    @FindBy(linkText = "Buttons")
+    public WebElement buttonsCard;
+
+    @FindBy (linkText = "Links")
+    public WebElement linksCard;
+
     public void clickOnRadioButtonCard() {
         radioButtonCard.click();
     }
 
     public void clickOnWebTablesCard() {
         webTablesCard.click();
+    }
+
+    public void clickOnButtonsCard() {
+        buttonsCard.click();
+    }
+
+    public void clickOnLinksCard() {
+        linksCard.click();
     }
 }
