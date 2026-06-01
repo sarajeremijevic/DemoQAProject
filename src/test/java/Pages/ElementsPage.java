@@ -14,7 +14,14 @@ public class ElementsPage extends BaseTest {
     @FindBy(linkText = "Radio Button")
     public WebElement radioButtonCard;
 
+    @FindBy(linkText = "Web Tables")
+    public WebElement webTablesCard;
+
     public void clickOnRadioButtonCard() {
         radioButtonCard.click();
+    }
+
+    public void clickOnWebTablesCard() {
+        webTablesCard.click();
     }
 }
