@@ -44,9 +44,9 @@ public class CheckBoxFunctionalityTest {
     @Test
     public void clickHomeTreeNode() {
         checkBoxPage.clickOnHomeTreeNode();
-        Assert.assertTrue(checkBoxPage.desktopBoxTitle.isDisplayed());
-        Assert.assertTrue(checkBoxPage.documentsBoxTitle.isDisplayed());
-        Assert.assertTrue(checkBoxPage.downloadsBoxTitle.isDisplayed());
+        Assert.assertTrue(checkBoxPage.checkBoxTitleList.get(1).isDisplayed());
+        Assert.assertTrue(checkBoxPage.checkBoxTitleList.get(2).isDisplayed());
+        Assert.assertTrue(checkBoxPage.checkBoxTitleList.get(3).isDisplayed());
     }
 
     @AfterMethod

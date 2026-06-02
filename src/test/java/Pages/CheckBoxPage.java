@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class CheckBoxPage extends BaseTest {
 
     public CheckBoxPage() {
@@ -23,14 +25,8 @@ public class CheckBoxPage extends BaseTest {
     @FindBy(css = ".rc-tree-switcher.rc-tree-switcher_close")
     public WebElement homeTreeNode;
 
-    @FindBy(xpath = "/html/body/div/div/div/div/div[2]/div[1]/div[1]/div[3]/div/div/div/div[2]/span[4]/span[2]")
-    public WebElement desktopBoxTitle;
-
-    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[2]/div[1]/div[1]/div[3]/div/div/div/div[3]/span[4]/span[2]")
-    public WebElement documentsBoxTitle;
-
-    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[2]/div[1]/div[1]/div[3]/div/div/div/div[4]/span[4]/span[2]")
-    public WebElement downloadsBoxTitle;
+    @FindBy(className = "rc-tree-title")
+    public List<WebElement> checkBoxTitleList;
 
     public void clickOnCheckBox () {
         checkBox.click();

@@ -17,14 +17,14 @@ public class ElementsPage extends BaseTest {
     @FindBy(linkText = "Web Tables")
     public WebElement webTablesCard;
 
-    @FindBy(linkText = "Buttons")
-    public WebElement buttonsCard;
-
-    @FindBy (linkText = "Links")
+    @FindBy(linkText = "Links")
     public WebElement linksCard;
 
-    @FindBy (linkText = "Check Box")
+    @FindBy(linkText = "Check Box")
     public WebElement checkBoxCard;
+
+    @FindBy(linkText = "Text Box")
+    public WebElement textBoxCard;
 
     public void clickOnRadioButtonCard() {
         radioButtonCard.click();
@@ -34,15 +34,15 @@ public class ElementsPage extends BaseTest {
         webTablesCard.click();
     }
 
-    public void clickOnButtonsCard() {
-        buttonsCard.click();
-    }
-
     public void clickOnLinksCard() {
         linksCard.click();
     }
 
     public void clickOnCheckBoxCard() {
         checkBoxCard.click();
+    }
+
+    public void clickOnTextBox() {
+        textBoxCard.click();
     }
 }
