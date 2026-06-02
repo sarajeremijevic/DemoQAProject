@@ -5,6 +5,7 @@ import Pages.HomePage;
 import Pages.LinksPage;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -56,6 +57,12 @@ public class HyperlinkFunctionalityTest {
     public void createdLinkReturns201() {
         linksPage.clickOnCreatedHyperLink();
         Assert.assertTrue(linksPage.linkResponse.getText().contains("201"));
+        Assert.assertTrue(linksPage.linkResponse.getText().contains("Created"));
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
     }
 
 }

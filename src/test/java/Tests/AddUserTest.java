@@ -40,7 +40,7 @@ public class AddUserTest {
         elementsPage.clickOnWebTablesCard();
     }
 
-    @Test(priority = 1)
+    @Test
     public void userCanBeAdded() {
         webTablesPage.clickOnAddButton();
         webTablesPage.inputFirstName(firstName);
