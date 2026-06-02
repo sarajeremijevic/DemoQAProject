@@ -72,4 +72,22 @@ public class WebTablesPage extends BaseTest {
     public void clickOnSubmitButton() {
         submitButton.click();
     }
+
+    @FindBy(xpath = "/html/body/div/div/div/div/div[2]/div[1]/div[2]/table/tbody/tr[4]/td[1]")
+    public WebElement firstNameCell;
+
+    @FindBy(xpath = "/html/body/div/div/div/div/div[2]/div[1]/div[2]/table/tbody/tr[4]/td[2]")
+    public WebElement lastNameCell;
+
+    @FindBy(xpath = "/html/body/div/div/div/div/div[2]/div[1]/div[2]/table/tbody/tr[4]/td[4]")
+    public WebElement emailCell;
+
+    @FindBy(xpath = "/html/body/div/div/div/div/div[2]/div[1]/div[2]/table/tbody/tr[4]/td[3]")
+    public WebElement ageCell;
+
+    @FindBy(xpath = "/html/body/div/div/div/div/div[2]/div[1]/div[2]/table/tbody/tr[4]/td[5]")
+    public WebElement salaryCell;
+
+    @FindBy(xpath = "/html/body/div/div/div/div/div[2]/div[1]/div[2]/table/tbody/tr[4]/td[6]")
+    public WebElement departmentCell;
 }

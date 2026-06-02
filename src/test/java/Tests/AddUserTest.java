@@ -4,7 +4,7 @@ import Pages.ElementsPage;
 import Pages.HomePage;
 import Pages.WebTablesPage;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -51,6 +51,11 @@ public class AddUserTest {
         webTablesPage.inputDepartment(department);
         webTablesPage.clickOnSubmitButton();
 
-
+        Assert.assertEquals(webTablesPage.firstNameCell.getText(), firstName);
+        Assert.assertEquals(webTablesPage.lastNameCell.getText(), lastName);
+        Assert.assertEquals(webTablesPage.ageCell.getText(), age);
+        Assert.assertEquals(webTablesPage.emailCell.getText(), email);
+        Assert.assertEquals(webTablesPage.salaryCell.getText(), salary);
+        Assert.assertEquals(webTablesPage.departmentCell.getText(), department);
     }
 }
