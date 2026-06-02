@@ -36,7 +36,7 @@ public class TextBoxFunctionalityTest {
         textBoxPage = new TextBoxPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnTextBox();
+        elementsPage.clickOnSideBarOption("Text Box");
     }
 
     @Test

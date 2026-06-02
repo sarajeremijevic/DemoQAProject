@@ -31,7 +31,7 @@ public class CheckBoxFunctionalityTest {
         checkBoxPage = new CheckBoxPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnCheckBoxCard();
+        elementsPage.clickOnSideBarOption("Check Box");
     }
 
     @Test

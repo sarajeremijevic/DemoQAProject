@@ -31,7 +31,7 @@ public class SelectRadioButtonTest {
         radioButtonPage = new RadioButtonPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnRadioButtonCard();
+        elementsPage.clickOnSideBarOption("Radio Button");
     }
 
     @Test(priority = 1)

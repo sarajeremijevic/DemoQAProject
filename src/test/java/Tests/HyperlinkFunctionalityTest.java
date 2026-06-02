@@ -32,7 +32,7 @@ public class HyperlinkFunctionalityTest {
         linksPage = new LinksPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnLinksCard();
+        elementsPage.clickOnSideBarOption("Links");
     }
 
     @Test

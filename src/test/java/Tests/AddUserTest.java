@@ -37,7 +37,7 @@ public class AddUserTest {
         webTablesPage = new WebTablesPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnWebTablesCard();
+        elementsPage.clickOnSideBarOption("Web Tables");
     }
 
     @Test
@@ -50,6 +50,8 @@ public class AddUserTest {
         webTablesPage.inputSalary(salary);
         webTablesPage.inputDepartment(department);
         webTablesPage.clickOnSubmitButton();
+
+
     }
 
     @AfterMethod
