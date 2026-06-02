@@ -51,9 +51,4 @@ public class ModalVisibilityTest {
         Assert.assertTrue(alertsPage.smallModalButton.isDisplayed());
         Assert.assertTrue(alertsPage.largeModalButton.isDisplayed());
     }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 }

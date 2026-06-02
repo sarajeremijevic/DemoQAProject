@@ -49,9 +49,4 @@ public class SelectRadioButtonTest {
         Assert.assertTrue(radioButtonPage.selectionMessage.isDisplayed());
         Assert.assertEquals(radioButtonPage.selectedOptionMessage.getText(), "Impressive");
     }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 }

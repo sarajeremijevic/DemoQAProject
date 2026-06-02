@@ -53,9 +53,4 @@ public class AddUserTest {
 
 
     }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 }

@@ -59,9 +59,4 @@ public class TextBoxFunctionalityTest {
         Assert.assertTrue(textBoxPage.textBoxDataList.get(3).isDisplayed());
         Assert.assertTrue(textBoxPage.textBoxDataList.get(3).getText().contains(permanentAddress));
     }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 }

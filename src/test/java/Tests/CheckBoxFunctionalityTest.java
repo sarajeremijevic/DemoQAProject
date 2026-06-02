@@ -49,8 +49,4 @@ public class CheckBoxFunctionalityTest {
         Assert.assertTrue(checkBoxPage.checkBoxTitleList.get(3).isDisplayed());
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 }

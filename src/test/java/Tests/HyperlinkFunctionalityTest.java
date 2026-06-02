@@ -59,10 +59,4 @@ public class HyperlinkFunctionalityTest {
         Assert.assertTrue(linksPage.linkResponse.getText().contains("201"));
         Assert.assertTrue(linksPage.linkResponse.getText().contains("Created"));
     }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
-
 }
