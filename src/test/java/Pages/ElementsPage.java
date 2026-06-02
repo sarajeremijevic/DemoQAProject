@@ -23,6 +23,9 @@ public class ElementsPage extends BaseTest {
     @FindBy (linkText = "Links")
     public WebElement linksCard;
 
+    @FindBy (linkText = "Check Box")
+    public WebElement checkBoxCard;
+
     public void clickOnRadioButtonCard() {
         radioButtonCard.click();
     }
@@ -37,5 +40,9 @@ public class ElementsPage extends BaseTest {
 
     public void clickOnLinksCard() {
         linksCard.click();
+    }
+
+    public void clickOnCheckBoxCard() {
+        checkBoxCard.click();
     }
 }
