@@ -31,7 +31,7 @@ public class ModalVisibilityTest {
     }
 
     @Test
-    public void modalButtonsDisplayPopUp() {
+    public void modalButtonsCanDisplayPopUp() {
         alertsPage.clickOnSmallModalButton();
 
         Assert.assertEquals(alertsPage.smallModalButton.getText(), "Small modal");

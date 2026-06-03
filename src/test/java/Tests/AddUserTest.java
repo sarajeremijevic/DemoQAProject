@@ -1,6 +1,6 @@
 package Tests;
 
-import Pages.ElementsPage;
+import Pages.SideBar;
 import Pages.HomePage;
 import Pages.WebTablesPage;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +15,7 @@ import static Base.BaseTest.driver;
 public class AddUserTest {
 
     HomePage homePage;
-    ElementsPage elementsPage;
+    SideBar sideBar;
     WebTablesPage webTablesPage;
 
     String firstName = "Sara";
@@ -33,11 +33,11 @@ public class AddUserTest {
         driver.navigate().to("https://demoqa.com/");
 
         homePage = new HomePage();
-        elementsPage = new ElementsPage();
+        sideBar = new SideBar();
         webTablesPage = new WebTablesPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnSideBarOption("Web Tables");
+        sideBar.clickOnSideBarOption("Web Tables");
     }
 
     @Test

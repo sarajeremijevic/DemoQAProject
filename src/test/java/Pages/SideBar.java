@@ -7,19 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class ElementsPage extends BaseTest {
+public class SideBar extends BaseTest {
 
-    public ElementsPage() {
+    public SideBar() {
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(className = "router-link")
-    public List<WebElement> elementsSideBarOptions;
+    public List<WebElement> sideBarOptions;
 
     public void clickOnSideBarOption(String optionName) {
-        for(int i = 0; i < elementsSideBarOptions.size(); i++) {
-            if(elementsSideBarOptions.get(i).getText().equals(optionName)) {
-                elementsSideBarOptions.get(i).click();
+        for(int i = 0; i < sideBarOptions.size(); i++) {
+            if(sideBarOptions.get(i).getText().equals(optionName)) {
+                sideBarOptions.get(i).click();
                 break;
             }
         }

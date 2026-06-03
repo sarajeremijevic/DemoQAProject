@@ -1,6 +1,6 @@
 package Tests;
 
-import Pages.ElementsPage;
+import Pages.SideBar;
 import Pages.HomePage;
 import Pages.LinksPage;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +16,7 @@ import static Base.BaseTest.driver;
 public class HyperlinkFunctionalityTest {
 
     HomePage homePage;
-    ElementsPage elementsPage;
+    SideBar sideBar;
     LinksPage linksPage;
 
     @BeforeMethod
@@ -27,15 +27,15 @@ public class HyperlinkFunctionalityTest {
         driver.navigate().to("https://demoqa.com/");
 
         homePage = new HomePage();
-        elementsPage = new ElementsPage();
+        sideBar = new SideBar();
         linksPage = new LinksPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnSideBarOption("Links");
+        sideBar.clickOnSideBarOption("Links");
     }
 
     @Test
-    public void homeLinkRedirectsToHomepage() {
+    public void homeLinkCanRedirectToHomepage() {
         String originalTab = driver.getWindowHandle();
         linksPage.clickOnHomeHyperLink();
 
@@ -53,7 +53,7 @@ public class HyperlinkFunctionalityTest {
     }
 
     @Test
-    public void createdLinkReturns201() {
+    public void createdLinkCanReturn201() {
         linksPage.clickOnCreatedHyperLink();
         Assert.assertTrue(linksPage.linkResponse.getText().contains("201"));
         Assert.assertTrue(linksPage.linkResponse.getText().contains("Created"));

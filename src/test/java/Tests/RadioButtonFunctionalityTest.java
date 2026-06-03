@@ -1,6 +1,6 @@
 package Tests;
 
-import Pages.ElementsPage;
+import Pages.SideBar;
 import Pages.HomePage;
 import Pages.RadioButtonPage;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,10 +12,10 @@ import java.time.Duration;
 
 import static Base.BaseTest.driver;
 
-public class SelectRadioButtonTest {
+public class RadioButtonFunctionalityTest {
 
     HomePage homePage;
-    ElementsPage elementsPage;
+    SideBar sideBar;
     RadioButtonPage radioButtonPage;
 
     @BeforeMethod
@@ -26,15 +26,15 @@ public class SelectRadioButtonTest {
         driver.navigate().to("https://demoqa.com/");
 
         homePage = new HomePage();
-        elementsPage = new ElementsPage();
+        sideBar = new SideBar();
         radioButtonPage = new RadioButtonPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnSideBarOption("Radio Button");
+        sideBar.clickOnSideBarOption("Radio Button");
     }
 
     @Test(priority = 1)
-    public void selectYesRadioButton() {
+    public void yesRadioButtonCanBeSelected() {
         radioButtonPage.clickOnYesRadioButton();
 
         Assert.assertTrue(radioButtonPage.selectionMessage.isDisplayed());
@@ -42,7 +42,7 @@ public class SelectRadioButtonTest {
     }
 
     @Test(priority = 2)
-    public void selectImpressiveRadioButton() {
+    public void impressiveRadioButtonCanBeSelected() {
         radioButtonPage.clickOnImpressiveRadioButton();
 
         Assert.assertTrue(radioButtonPage.selectionMessage.isDisplayed());

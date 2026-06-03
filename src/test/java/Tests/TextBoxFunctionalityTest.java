@@ -1,6 +1,6 @@
 package Tests;
 
-import Pages.ElementsPage;
+import Pages.SideBar;
 import Pages.HomePage;
 import Pages.TextBoxPage;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +15,7 @@ import static Base.BaseTest.driver;
 public class TextBoxFunctionalityTest {
 
     HomePage homePage;
-    ElementsPage elementsPage;
+    SideBar sideBar;
     TextBoxPage textBoxPage;
 
     String name = "Sara";
@@ -31,15 +31,15 @@ public class TextBoxFunctionalityTest {
         driver.navigate().to("https://demoqa.com/");
 
         homePage = new HomePage();
-        elementsPage = new ElementsPage();
+        sideBar = new SideBar();
         textBoxPage = new TextBoxPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnSideBarOption("Text Box");
+        sideBar.clickOnSideBarOption("Text Box");
     }
 
     @Test
-    public void textBoxDataIsDisplayed() {
+    public void textBoxDataCanBeDisplayed() {
         textBoxPage.inputFullName(name);
         textBoxPage.inputEmail(email);
         textBoxPage.inputCurrentAddress(currentAddress);

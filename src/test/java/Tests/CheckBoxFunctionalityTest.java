@@ -1,7 +1,7 @@
 package Tests;
 
 import Pages.CheckBoxPage;
-import Pages.ElementsPage;
+import Pages.SideBar;
 import Pages.HomePage;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -15,7 +15,7 @@ import static Base.BaseTest.driver;
 public class CheckBoxFunctionalityTest {
 
     HomePage homePage;
-    ElementsPage elementsPage;
+    SideBar sideBar;
     CheckBoxPage checkBoxPage;
 
     @BeforeMethod
@@ -26,22 +26,22 @@ public class CheckBoxFunctionalityTest {
         driver.navigate().to("https://demoqa.com/");
 
         homePage = new HomePage();
-        elementsPage = new ElementsPage();
+        sideBar = new SideBar();
         checkBoxPage = new CheckBoxPage();
 
         homePage.clickOnCard("Elements");
-        elementsPage.clickOnSideBarOption("Check Box");
+        sideBar.clickOnSideBarOption("Check Box");
     }
 
     @Test
-    public void selectHomeCheckBox() {
+    public void homeCheckBoxCanBeSelected() {
         checkBoxPage.clickOnCheckBox();
         Assert.assertTrue(checkBoxPage.selectedCheckBox.isDisplayed());
         Assert.assertTrue(checkBoxPage.resultText.isDisplayed());
     }
 
     @Test
-    public void clickHomeTreeNode() {
+    public void homeTreeNodeCanExpand() {
         checkBoxPage.clickOnHomeTreeNode();
         Assert.assertTrue(checkBoxPage.checkBoxTitleList.get(1).isDisplayed());
         Assert.assertTrue(checkBoxPage.checkBoxTitleList.get(2).isDisplayed());
