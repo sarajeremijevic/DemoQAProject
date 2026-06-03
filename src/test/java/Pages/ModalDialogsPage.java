@@ -5,14 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AlertsFrameAndWindowsPage extends BaseTest {
+public class ModalDialogsPage extends BaseTest {
 
-    public AlertsFrameAndWindowsPage() {
+    public ModalDialogsPage() {
         PageFactory.initElements(driver, this);
     }
-
-    @FindBy(linkText = "Modal Dialogs")
-    public WebElement modalDialogsCard;
 
     @FindBy(id = "showSmallModal")
     public WebElement smallModalButton;
@@ -31,10 +28,6 @@ public class AlertsFrameAndWindowsPage extends BaseTest {
 
     @FindBy(className = "btn-close")
     public WebElement closeButton;
-
-    public void clickOnModalDialogsCard() {
-        modalDialogsCard.click();
-    }
 
     public void clickOnSmallModalButton() {
         smallModalButton.click();

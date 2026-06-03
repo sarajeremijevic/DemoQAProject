@@ -1,7 +1,8 @@
 package Tests;
 
-import Pages.AlertsFrameAndWindowsPage;
+import Pages.ModalDialogsPage;
 import Pages.HomePage;
+import Pages.SideBar;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +15,8 @@ import static Base.BaseTest.driver;
 public class ModalVisibilityTest {
 
     HomePage homePage;
-    AlertsFrameAndWindowsPage alertsPage;
+    SideBar sideBar;
+    ModalDialogsPage modalPage;
 
     @BeforeMethod
     public void pageSetUp() {
@@ -24,29 +26,30 @@ public class ModalVisibilityTest {
         driver.navigate().to("https://demoqa.com/");
 
         homePage = new HomePage();
-        alertsPage = new AlertsFrameAndWindowsPage();
+        sideBar = new SideBar();
+        modalPage = new ModalDialogsPage();
 
         homePage.clickOnCard("Alerts, Frame & Windows");
-        alertsPage.clickOnModalDialogsCard();
+        sideBar.clickOnSideBarOption("Modal Dialogs");
     }
 
     @Test
     public void modalButtonsCanDisplayPopUp() {
-        alertsPage.clickOnSmallModalButton();
+        modalPage.clickOnSmallModalButton();
 
-        Assert.assertEquals(alertsPage.smallModalButton.getText(), "Small modal");
-        Assert.assertTrue(alertsPage.closeButton.isDisplayed());
+        Assert.assertEquals(modalPage.smallModalButton.getText(), "Small modal");
+        Assert.assertTrue(modalPage.closeButton.isDisplayed());
 
-        alertsPage.clickOnCloseSmallModalButton();
+        modalPage.clickOnCloseSmallModalButton();
 
-        alertsPage.clickOnLargeModalButton();
+        modalPage.clickOnLargeModalButton();
 
-        Assert.assertEquals(alertsPage.largeModalButton.getText(), "Large modal");
-        Assert.assertTrue(alertsPage.closeButton.isDisplayed());
+        Assert.assertEquals(modalPage.largeModalButton.getText(), "Large modal");
+        Assert.assertTrue(modalPage.closeButton.isDisplayed());
 
-        alertsPage.clickOnCloseLargeModalButton();
+        modalPage.clickOnCloseLargeModalButton();
 
-        Assert.assertTrue(alertsPage.smallModalButton.isDisplayed());
-        Assert.assertTrue(alertsPage.largeModalButton.isDisplayed());
+        Assert.assertTrue(modalPage.smallModalButton.isDisplayed());
+        Assert.assertTrue(modalPage.largeModalButton.isDisplayed());
     }
 }
