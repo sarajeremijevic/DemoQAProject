@@ -1,7 +1,10 @@
 package Tests;
 
 import Pages.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -17,16 +20,18 @@ public class RegisterUserTest {
     LoginPage loginPage;
     RegisterPage registerPage;
     ProfilePage profilePage;
+    WebDriverWait wait;
 
     String firstName = "Sara";
     String lastName = "Test";
-    String username = "sarademo1";
+    String username = "demoqasara";
     String password = "Qwerty123!@#";
 
     @BeforeMethod
     public void pageSetUp() {
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().window().maximize();
         driver.navigate().to("https://demoqa.com/");
 
@@ -45,21 +50,18 @@ public class RegisterUserTest {
     public void userCanRegister() throws InterruptedException {
         Thread.sleep(1000);
         registerPage.inputFirstName(firstName);
-        Thread.sleep(500);
         registerPage.inputLastName(lastName);
-        Thread.sleep(500);
         registerPage.inputUserName(username);
-        Thread.sleep(500);
         registerPage.inputPassword(password);
-        Thread.sleep(500);
         registerPage.clickOnRegisterButton();
         driver.navigate().refresh();
 
         registerPage.clickOnBackToLogin();
+        driver.navigate().refresh();
         loginPage.inputUserName(username);
         loginPage.inputPassword(password);
         loginPage.clickOnLoginButton();
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.urlToBe("https://demoqa.com/profile"));
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://demoqa.com/profile");
         Assert.assertTrue(profilePage.profileUserName.getText().contains(username));

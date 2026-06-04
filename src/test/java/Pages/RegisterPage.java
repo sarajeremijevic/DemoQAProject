@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class RegisterPage extends BaseTest {
 
     public RegisterPage() {
@@ -29,24 +31,20 @@ public class RegisterPage extends BaseTest {
     @FindBy(id = "gotologin")
     public WebElement backToLoginButton;
 
-    public void inputFirstName(String firstName) {
-        firstNameField.clear();
-        firstNameField.sendKeys(firstName);
+    public void inputFirstName(String firstName) throws InterruptedException {
+        typeLikeAHuman(firstNameField, firstName);
     }
 
-    public void inputLastName(String lastName) {
-        lastNameField.clear();
-        lastNameField.sendKeys(lastName);
+    public void inputLastName(String lastName) throws InterruptedException{
+        typeLikeAHuman(lastNameField, lastName);
     }
 
-    public void inputUserName(String username) {
-        userNameField.clear();
-        userNameField.sendKeys(username);
+    public void inputUserName(String username) throws InterruptedException{
+        typeLikeAHuman(userNameField, username);
     }
 
-    public void inputPassword(String password) {
-        passwordField.clear();
-        passwordField.sendKeys(password);
+    public void inputPassword(String password) throws InterruptedException{
+        typeLikeAHuman(passwordField, password);
     }
 
     public void clickOnRegisterButton() {
@@ -55,5 +53,15 @@ public class RegisterPage extends BaseTest {
 
     public void clickOnBackToLogin() {
         backToLoginButton.click();
+    }
+
+    private void typeLikeAHuman(WebElement element, String text) throws InterruptedException {
+        element.clear();
+
+        for(char c: text.toCharArray()) {
+            element.sendKeys(String.valueOf(c));
+            int randomDelay = ThreadLocalRandom.current().nextInt(50, 100);
+            Thread.sleep(randomDelay);
+        }
     }
 }
