@@ -23,7 +23,7 @@ public class RegisterUserTest {
 
     String firstName = "Sara";
     String lastName = "Test";
-    String username = "demoqasara";
+    String username = "demoqasara123";
     String password = "Qwerty123!@#";
 
     @BeforeMethod
