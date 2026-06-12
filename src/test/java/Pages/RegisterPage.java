@@ -60,7 +60,7 @@ public class RegisterPage extends BaseTest {
 
         for(char c: text.toCharArray()) {
             element.sendKeys(String.valueOf(c));
-            int randomDelay = ThreadLocalRandom.current().nextInt(50, 100);
+            int randomDelay = ThreadLocalRandom.current().nextInt(70, 120);
             Thread.sleep(randomDelay);
         }
     }

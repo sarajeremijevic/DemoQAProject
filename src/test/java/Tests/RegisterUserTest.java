@@ -1,10 +1,12 @@
 package Tests;
 
 import Pages.*;
+import Utils.RetryAnalyzer;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -23,7 +25,7 @@ public class RegisterUserTest {
 
     String firstName = "Sara";
     String lastName = "Test";
-    String username = "demoqasara123";
+    String username = "random11";
     String password = "Qwerty123!@#";
 
     @BeforeMethod
@@ -45,7 +47,7 @@ public class RegisterUserTest {
         loginPage.clickOnNewUserButton();
     }
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void userCanRegister() throws InterruptedException {
         Thread.sleep(1000);
         registerPage.inputFirstName(firstName);
@@ -56,7 +58,7 @@ public class RegisterUserTest {
         driver.navigate().refresh();
 
         registerPage.clickOnBackToLogin();
-        driver.navigate().refresh();
+        wait.until(ExpectedConditions.urlToBe("https://demoqa.com/login"));
         loginPage.inputUserName(username);
         loginPage.inputPassword(password);
         loginPage.clickOnLoginButton();
@@ -64,5 +66,10 @@ public class RegisterUserTest {
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://demoqa.com/profile");
         Assert.assertTrue(profilePage.profileUserName.getText().contains(username));
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        driver.quit();
     }
 }
